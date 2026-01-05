@@ -10,40 +10,33 @@ This is the modern Frontend for the School_AS platform, built with **React**, **
 ## Features
 - **Premium Design**: Modern UI with TailwindCSS, gradients, and animations.
 - **Authentication**: JWT-based login with persistent session.
-- **Course Management**: Full CRUD (Create, Read, Update, Delete).
+- **Course Management**: Create, Read, Update, Delete (Soft Delete).
 - **Lesson Management**: Add and reorder lessons.
-- **Docker Support**: Multi-stage build (Node -> Nginx).
 
 ## Prerequisites
 - Node.js 18+
+- Running Backend API (via Docker on port 5000 recommended).
 
 ## Configuration
-Create a `.env` file (or use `.env.local`):
+Create a `.env` file in the root directory:
 ```ini
-VITE_API_URL=http://localhost:8080/api
+VITE_API_URL=http://localhost:5000/api
 ```
+*Note: The backend default docker port is 5000. Adjust if different.*
 
 ## Running Locally
-
-### Option 1: Docker (Recommended)
-Run as part of the main `docker-compose` stack in the backend repository.
-```bash
-# In the backend repo root
-sudo docker-compose up --build
-```
-
-### Option 2: npm
-1. Install dependencies:
+1. **Install Dependencies**:
    ```bash
    npm install
    ```
-2. Start development server:
+2. **Start Development Server**:
    ```bash
    npm run dev
    ```
-3. Access at: http://localhost:5173
+3. **Access Application**:
+   - URL: [http://localhost:5173](http://localhost:5173)
 
 ## Deployment (Vercel)
 1. Import this repository into Vercel.
-2. Set Environment Variable:
-   - `VITE_API_URL`: URL of your deployed Backend API.
+2. Set Environment Variable in Vercel Project Settings:
+   - `VITE_API_URL`: URL of your live Backend API (e.g. Render URL).
