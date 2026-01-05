@@ -15,14 +15,14 @@ This is the modern Frontend for the School_AS platform, built with **React**, **
 
 ## Prerequisites
 - Node.js 18+
-- Running Backend API (via Docker on port 5000 recommended).
+- Running Backend API (via Docker on port 15000 recommended).
 
 ## Configuration
 Create a `.env` file in the root directory:
 ```ini
-VITE_API_URL=http://localhost:5000/api
+VITE_API_URL=http://localhost:15000/api
 ```
-*Note: The backend default docker port is 5000. Adjust if different.*
+*Note: The backend default docker port is 15000. Adjust if different.*
 
 ## Running Locally
 1. **Install Dependencies**:
