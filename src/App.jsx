@@ -5,6 +5,7 @@ import CourseList from './pages/CourseList';
 import CourseDetail from './pages/CourseDetail';
 import LessonViewer from './pages/LessonViewer';
 import Register from './pages/Register';
+import AdminDashboard from './pages/AdminDashboard';
 
 const PrivateRoute = ({ children }) => {
   const { user } = useAuth();
@@ -39,6 +40,14 @@ function App() {
             element={
               <PrivateRoute>
                 <LessonViewer />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/admin/dashboard"
+            element={
+              <PrivateRoute>
+                <AdminDashboard />
               </PrivateRoute>
             }
           />
