@@ -55,11 +55,13 @@ api.interceptors.response.use(
 
             if (!isLoginRequest) {
                 // Auto-logout on 401 for PROTECTED routes only
-                localStorage.removeItem('token');
+                // Temporarily disabled for debugging
+                // localStorage.removeItem('token');
 
-                if (!window.location.pathname.includes('/login') && !window.location.pathname.includes('/register')) {
-                    window.location.href = '/login';
-                }
+                // if (!window.location.pathname.includes('/login') && !window.location.pathname.includes('/register')) {
+                //      // window.location.href = '/login';
+                //      console.warn("401 Unauthorized detected but auto-logout disabled for debugging.");
+                // }
             }
         }
 
