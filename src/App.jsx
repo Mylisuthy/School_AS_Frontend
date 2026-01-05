@@ -3,6 +3,7 @@ import { AuthProvider, useAuth } from './context/AuthContext';
 import Login from './pages/Login';
 import CourseList from './pages/CourseList';
 import CourseDetail from './pages/CourseDetail';
+import LessonViewer from './pages/LessonViewer';
 import Register from './pages/Register';
 
 const PrivateRoute = ({ children }) => {
@@ -33,7 +34,15 @@ function App() {
               </PrivateRoute>
             }
           />
-          <Route path="/" element={<Navigate to="/courses" />} />
+          <Route
+            path="/lessons/:id"
+            element={
+              <PrivateRoute>
+                <LessonViewer />
+              </PrivateRoute>
+            }
+          />
+          <Route path="/" element={<Navigate to="/login" />} />
         </Routes>
       </Router>
     </AuthProvider>
