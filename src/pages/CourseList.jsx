@@ -9,9 +9,13 @@ export default function CourseList() {
     const [error, setError] = useState('');
     const navigate = useNavigate();
 
+    const { user } = useAuth(); // Get user from context
+
     useEffect(() => {
-        fetchCourses();
-    }, [filter]);
+        if (user) {
+            fetchCourses();
+        }
+    }, [filter, user]);
 
     const fetchCourses = async () => {
         try {

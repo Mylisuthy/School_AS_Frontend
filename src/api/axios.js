@@ -50,13 +50,16 @@ api.interceptors.response.use(
         error.formattedMessage = message;
 
         if (error.response && error.response.status === 401) {
-            // Auto-logout on 401
-            localStorage.removeItem('token');
-            // Optional: Redirect to login.
-            // Since we use React Router, we can't easily use navigate hook outside component
-            // But we can use window.location as a fallback or custom event.
-            if (!window.location.pathname.includes('/login') && !window.location.pathname.includes('/register')) {
-                window.location.href = '/login';
+            // Check if it's a login attempt failure - don't logout/redirect then
+            const isLoginRequest = error.config && error.config.url && error.config.url.includes('/auth/login');
+
+            if (!isLoginRequest) {
+                // Auto-logout on 401 for PROTECTED routes only
+                localStorage.removeItem('token');
+
+                if (!window.location.pathname.includes('/login') && !window.location.pathname.includes('/register')) {
+                    window.location.href = '/login';
+                }
             }
         }
 
