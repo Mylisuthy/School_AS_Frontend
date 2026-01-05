@@ -1,16 +1,44 @@
-# React + Vite
+# School_AS Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+This is the modern Frontend for the School_AS platform, built with **React**, **Vite**, and **TailwindCSS**. It consumes the School_AS Backend API.
 
-Currently, two official plugins are available:
+## Repository
+This frontend code is maintained in: https://github.com/Mylisuthy/School_AS_Frontend
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- **Premium Design**: Modern UI with TailwindCSS, gradients, and animations.
+- **Authentication**: JWT-based login with persistent session.
+- **Course Management**: Full CRUD (Create, Read, Update, Delete).
+- **Lesson Management**: Add and reorder lessons.
+- **Docker Support**: Multi-stage build (Node -> Nginx).
 
-## React Compiler
+## Prerequisites
+- Node.js 18+
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Configuration
+Create a `.env` file (or use `.env.local`):
+```ini
+VITE_API_URL=http://localhost:8080/api
+```
 
-## Expanding the ESLint configuration
+## Running Locally
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Option 1: Docker (Recommended)
+Run as part of the main `docker-compose` stack in the backend repository.
+
+### Option 2: npm
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+2. Start development server:
+   ```bash
+   npm run dev
+   ```
+3. Access at: http://localhost:5173
+
+## Deployment (Vercel)
+1. Import this repository into Vercel.
+2. Set Environment Variable:
+   - `VITE_API_URL`: URL of your deployed Backend API.
