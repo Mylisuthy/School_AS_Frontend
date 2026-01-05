@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 @import "tailwindcss";
 
@@ -56,8 +57,145 @@
 }
 
 @layer base {
+
+    /* Global Reset / Base Styles */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: 'VT323', monospace;
+    }
+
     body {
-        @apply font-sans antialiased text-gray-900 bg-gray-50;
+        font-family: 'Atkinson Hyperlegible', system-ui, -apple-system, sans-serif;
+        color: #1d1d21;
+        background-color: #d1d1d1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+
+        background-image: repeating-linear-gradient(45deg,
+                #d1d1d1 25%,
+                transparent 25%,
+                transparent 75%,
+                #d1d1d1 75%,
+                #d1d1d1),
+            repeating-linear-gradient(45deg,
+                #d1d1d1 25%,
+                #c0c0c0 25%,
+                #c0c0c0 75%,
+                #d1d1d1 75%,
+                #d1d1d1);
+        background-position: 0 0, 10px 10px;
+        background-size: 20px 20px;
+    }
+
+    /* Enforce "Blocky" look */
+    *,
+    *::before,
+    *::after {
+        border-radius: 0 !important;
+    }
+
+    /* Minecraft Button Style defaults */
+    button,
+    .btn {
+        border: 2px solid #1d1d21;
+        box-shadow: 4px 4px 0px 0px rgba(29, 29, 33, 1);
+        transition: all 0.15s ease-in-out;
+    }
+
+    button:active,
+    .btn:active {
+        box-shadow: none;
+        transform: translate(4px, 4px);
+    }
+
+    input,
+    textarea,
+    select {
+        border: 2px solid #1d1d21;
+        font-family: 'VT323', monospace;
+        font-size: 1.25rem;
+        /* text-xl */
+        background-color: white;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+        outline: none !important;
+        box-shadow: none !important;
+    }
+
+    /* Minecraft Component Utilities - Using Standard CSS classes to avoid @apply issues */
+    .mc-card {
+        background-color: #C6C6C6;
+        border: 4px solid;
+        border-left-color: white;
+        border-top-color: white;
+        border-right-color: #555555;
+        border-bottom-color: #555555;
+        outline: 2px solid black;
+        padding: 1rem;
+    }
+
+    .mc-btn-stone {
+        background-color: #7d7d7d;
+        border: 2px solid;
+        border-color: #a0a0a0 #555555 #555555 #a0a0a0;
+        color: white;
+        box-shadow: 2px 2px 0px 0px #000000;
+    }
+
+    .mc-btn-stone:hover {
+        background-color: #8b8b8b;
+        color: #ffffa0;
+    }
+
+    .mc-btn-stone:active {
+        border-color: #555555 #a0a0a0 #a0a0a0 #555555;
+    }
+
+    .mc-input {
+        background-color: rgba(0, 0, 0, 0.5);
+        border: 2px solid #a0a0a0;
+        color: white;
+        padding: 0.5rem;
+    }
+
+    .mc-input:focus {
+        border-color: white;
+        outline: none;
+    }
+
+    .mc-slot {
+        background-color: #8b8b8b;
+        border: 2px solid;
+        border-color: #373737 #ffffff #ffffff #373737;
+        width: 3rem;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .retro-shadow {
+        text-shadow: 2px 2px 0px #3f3f3f;
+    }
+
+    /* Legacy color helpers if needed */
+    .text-minecraft-dark {
+        color: #1d1d21;
+    }
+
+    .bg-minecraft-stone {
+        background-color: #7d7d7d;
+    }
+
+    .font-minecraft {
+        font-family: 'VT323', monospace;
     }
 }
 
