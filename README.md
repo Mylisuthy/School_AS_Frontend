@@ -3,8 +3,9 @@
 ## Overview
 This is the modern Frontend for the School_AS platform, built with **React**, **Vite**, and **TailwindCSS**. It consumes the School_AS Backend API.
 
-## Repository
-This frontend code is maintained in: https://github.com/Mylisuthy/School_AS_Frontend
+## Repositories
+- **Frontend (This Repo)**: [https://github.com/Mylisuthy/School_AS_Frontend.git](https://github.com/Mylisuthy/School_AS_Frontend.git)
+- **Backend API**: [https://github.com/Mylisuthy/School_AS.git](https://github.com/Mylisuthy/School_AS.git)
 
 ## Features
 - **Premium Design**: Modern UI with TailwindCSS, gradients, and animations.
@@ -26,6 +27,10 @@ VITE_API_URL=http://localhost:8080/api
 
 ### Option 1: Docker (Recommended)
 Run as part of the main `docker-compose` stack in the backend repository.
+```bash
+# In the backend repo root
+sudo docker-compose up --build
+```
 
 ### Option 2: npm
 1. Install dependencies:
